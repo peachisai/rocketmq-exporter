@@ -20,4 +20,4 @@ MAINTAINER breeze
 ADD rocketmq-exporter-0.0.3-SNAPSHOT-exec.jar rocketmq-exporter.jar
 ADD https://dtdg.co/latest-java-tracer dd-java-agent.jar
 EXPOSE 5557
-ENTRYPOINT ["java","-javaagent:dd-java-agent.jar","-jar","rocketmq-exporter.jar"]
+ENTRYPOINT ["java","-javaagent:dd-java-agent.jar","-Ddd.service.name=db-app","-jar","rocketmq-exporter.jar"]
