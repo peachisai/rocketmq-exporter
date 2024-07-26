@@ -19,5 +19,5 @@ FROM java:8
 MAINTAINER breeze
 ADD rocketmq-exporter-0.0.3-SNAPSHOT-exec.jar rocketmq-exporter.jar
 EXPOSE 5557
-ENTRYPOINT ["java","-javaagent:/home/data/apm/dd-java-agent.jar","-Ddd.service.name=kafka-producer","-Ddd_trace_debug=true","-Ddd_agent_host=localhost","Ddd.trace.agent.port=8126",
+ENTRYPOINT ["java","-javaagent:/home/data/apm/dd-java-agent.jar","-Ddd.service.name=kafka-producer","-Ddd.trace.debug=true","-Ddd.agent.host=localhost","-Ddd.trace.agent.port=8126",
             "-jar","rocketmq-exporter.jar"]
